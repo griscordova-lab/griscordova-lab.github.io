@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng"
+   type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng"
+   type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Panegírico al Duque de Lerma</title>
+            <author>Luis de Góngora y Argote</author>
+         </titleStmt>
+         <publicationStmt>
+            <p>Documento codificado para el curso de Gestión de datos, imágenes y texto</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Extracto tomado de <title>Todas las obras</title> [1654]</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   
+   <text>
+      <body>
+         <lg type="stanza">
+            <l n="1">
+               <label>1.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> Con naval pompa</seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> de inquieto lino</seg>
+            </l>
+            
+            <l n="2">
+               <label>2.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> Velero <choice><abbr>bosq</abbr><expan>bosque</expan></choice></seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> <choice><abbr>au</abbr><expan>aún</expan></choice> <choice><abbr>cotra</abbr><expan>contra</expan></choice> el <choice><abbr>vieto</abbr><expan>viento</expan></choice> armado</seg>
+            </l>
+            
+            <l n="3">
+               <label>3.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> La proa diligente</seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> en poca arena</seg>
+            </l>
+            
+            <l n="4">
+               <label>4.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> No solo dirigi<sic>ò</sic></seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> descaminado</seg>
+            </l>
+            
+            <l n="5">
+               <label>5.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> El Príncipe Troyano</seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> peregrino;</seg>
+            </l>
+            
+            <l n="6">
+               <label>6.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> Mas redujola</seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> entre <choice><orig>vna</orig><sic><pc>.</pc></sic><reg>una</reg></choice> y otra almena</seg>
+            </l>
+            
+            <l n="7">
+               <label>7.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> Tocó las playas, mas</seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> fue de su pena</seg>
+            </l>
+            
+            <l n="8">
+               <label>8.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> Terminó luminoso:</seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi></seg>
+            </l>
+            
+            <l n="9">
+               <label>9.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> Que fuego <choice><orig>el</orig><reg>él</reg></choice> <choice><orig>espirando</orig><reg>expirando</reg></choice></seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> afectuoso,</seg>
+            </l>
+            
+            <l n="10">
+               <label>10.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> <hi>Delos</hi>, campos apenas</seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> ha ofrecido</seg>
+            </l>
+            
+            <l n="11">
+               <label>11.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> Do hall<sic>ò</sic> reparo</seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> agradecidamente;</seg>
+            </l>
+            
+            <l n="12">
+               <label>12.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> Quando de amor</seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> admira reverente</seg>
+            </l>
+            
+            <l n="13">
+               <label>13.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> <choice><orig>Deydad</orig><reg>Deidad</reg></choice> que en la Isla</seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> se venera culta</seg>
+            </l>
+            
+            <l n="14">
+               <label>14.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> <choice><orig>Triumphando</orig><reg>Triumfando</reg></choice></seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> <choice><orig>de el</orig><reg>del</reg></choice> agua, que la oculta</seg>
+            </l>
+            
+            <l n="15">
+               <label>15.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> <choice><orig>Aun</orig><reg>Aún</reg></choice> contra el</seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> <name><choice><orig>Orion</orig><reg>Orión</reg></choice></name> humedecido;</seg>
+            </l>
+            
+            <l n="16">
+               <label>16.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> Que ser quiso en</seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> el mar sin <choice><orig>cobardia</orig><reg>cobardía</reg></choice></seg>
+            </l>
+            
+            <l n="17">
+               <label>17.</label>
+               <seg type="a"><hi rend="italic">[a]</hi> Al <choice><orig>Phrygio</orig><reg>Frigio</reg></choice> muro,</seg>
+               <caesura/>
+               <seg type="b"><hi rend="italic">[b]</hi> y resistencia al <choice><orig>dia</orig><reg>día</reg></choice></seg>
+            </l>
+         </lg>
+      </body>
+   </text>
+</TEI>
