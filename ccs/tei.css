@@ -1,0 +1,115 @@
+.header {
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-style: italic;
+  color: #555;
+}
+
+body {
+  font-size: 14pt;
+  font-family: 'Times New Roman', serif;
+  margin: 0.5cm;
+}
+
+.line, l {
+  display: block;
+  margin-bottom: 0.5em;
+  text-indent: 1em;
+}
+
+.stanza {
+  margin-bottom: 1em;
+}
+
+.line-number::before {
+  content: attr(data-n) ". ";
+  font-size: small;
+  color: gray;
+  margin-right: 0.5em;
+  display: inline-block;
+  width: 2em;
+}
+
+.hemistich.a::before {
+  content: "[a] ";
+  font-weight: bold;
+  margin-right: 0.3em;
+}
+
+.hemistich.b::before {
+  content: "[b] ";
+  font-weight: bold;
+  margin-right: 0.3em;
+}
+
+.caesura {
+  margin: 0 0.5em;
+  font-weight: bold;
+  color: rgb(211, 163, 233);
+}
+
+tei-add, add {
+  text-decoration: underline;
+  color: green;
+  font-weight: bold;
+}
+
+tei-del, del {
+  text-decoration: line-through;
+  color: red;
+}
+
+tei-subst, subst {
+  background-color: yellow;
+  padding: 0 2px;
+}
+
+tei-reg, reg {
+  color: blue;
+}
+
+tei-orig, orig {
+  color: #66666670;
+  font-style: italic;
+}
+
+tei-abbr, abbr {
+  color: rgba(255, 140, 0, 0.408);
+  font-style: italic;
+}
+
+.variant {
+  font-style: italic;
+  color: darkgreen;
+}
+
+tei-choice:hover tei-orig,
+choice:hover orig {
+  opacity: 1;
+  visibility: visible;
+}
+
+tei-pc, pc {
+  display: none;
+}
+
+tei-figdesc, figdesc {
+  font-style: italic;
+  display: block;
+  text-align: center;
+  font-size: smaller;
+}
+
+tei-graphic, graphic {
+  display: block;
+  text-align: center;
+}
