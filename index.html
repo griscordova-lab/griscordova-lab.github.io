@@ -1,51 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Centón TEI</title>
-  <link rel="stylesheet" href="css/tei.css"> <!-- Ajusta si está en otra carpeta -->
-</head>
-<body>
-  <h1>Lectura del Centón</h1>
-  <button onclick="cargarCenton()">Mostrar texto</button>
-  <div id="centon"></div>
-
+  <link rel="stylesheet" href="css/tei.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/tei.css">
+  <script src="js/CETEI.js"></script>
   <script>
-    function cargarCenton() {
-      fetch("Centon.xml")
-        .then(response => response.text())
-        .then(str => {
-          const parser = new DOMParser();
-          const xmlDoc = parser.parseFromString(str, "application/xml");
-          const fragmentos = xmlDoc.getElementsByTagName("Fragmento");
-          const contenedor = document.getElementById("centon");
-          contenedor.innerHTML = "";
-
-          for (let i = 0; i < fragmentos.length; i++) {
-            const texto = fragmentos[i].getAttribute("texto");
-            const autor = fragmentos[i].getAttribute("autor");
-
-            const linea = document.createElement("div");
-            linea.className = "line-number";
-            linea.setAttribute("data-n", i + 1);
-
-            const hemistichA = document.createElement("span");
-            hemistichA.className = "hemistich a";
-            hemistichA.textContent = texto;
-
-            const autorSpan = document.createElement("span");
-            autorSpan.className = "variant";
-            autorSpan.textContent = ` — ${autor}`;
-
-            linea.appendChild(hemistichA);
-            linea.appendChild(autorSpan);
-            contenedor.appendChild(linea);
+    let c = new CETEI();
+    let behaviors = {
+      "tei": {
+        "head": function(e) {
+          let level = document.evaluate("count(ancestor::tei-div)", e, null, XPathResult.NUMBER_TYPE, null);
+          let result = document.createElement("h" + (level.numberValue>7 ? 7 : level.numberValue));
+          for (let n of Array.from(e.childNodes)) {
+            result.appendChild(n.cloneNode());
           }
-        })
-        .catch(error => {
-          console.error("Error al cargar Centon.xml:", error);
-        });
-    }
+          return result;
+
+    };
+    c.addBehaviors(behaviors);
+    c.getHTML5('Centon.xml', function(data){
+      document.getElementsByTagName('body')[0].appendChild(data);
+    });
   </script>
-</body>
 </html>
