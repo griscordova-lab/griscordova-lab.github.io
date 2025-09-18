@@ -2,20 +2,31 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Bienvenida</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
-    h1 {
-      color: #2c3e50;
-    }
-    p {
-      color: #555;
-    }
-  </style>
+  <link rel="stylesheet" href="css/tei.css">
+  <script src="js/CETEI.js"></script>
+  <script>
+    let c = new CETEI();
+    let behaviors = {
+      "tei": {
+        "head": function(e) {
+          let level = document.evaluate("count(ancestor::tei-div)", e, null, XPathResult.NUMBER_TYPE, null);
+          let result = document.createElement("h" + (level.numberValue>7 ? 7 : level.numberValue));
+          for (let n of Array.from(e.childNodes)) {
+            result.appendChild(n.cloneNode());
+          }
+          return result;
+        },
+        "lb": ["<br>"],
+        /* Insert a <p> with the content of the <pb>'s @n attribute inside it
+           Add a line above with CSS */
+        "pb": ["<p class=\"break\">$@n</p>"],
+      }
+    };
+    c.addBehaviors(behaviors);
+    c.getHTML5('Centón.xml', function(data){
+      document.getElementsByTagName('body')[0].appendChild(data);
+    });
+  </script>
 </head>
 <body>
   <h1>¡Hola, Griselda!</h1>
